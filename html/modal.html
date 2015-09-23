@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../style/bootstrap.css">
+    <link rel="stylesheet" href="../style/angular-motion.css">
+
+</head>
+<body>
+<div class="container" ng-controller="ModelCtrl">
+    <h2>Model Demo</h2>
+    <button class="btn btn-primary" type="button"
+            data-placement="center" data-animation="am-fade-and-scale"
+            bs-modal="modal">Click to toggle modal<br>
+        <small>(using an object)</small>
+    </button>
+    <button class="btn btn-success" type="button">Custom Modal<br>
+        <small>(using data-template)</small>
+    </button>
+</div>
+<script src="../js/angular.js"></script>
+<script src="../js/angular-strap.js"></script>
+<script src="../js/angular-strap.tpl.js"></script>
+<script src="../js/angular-animate.js"></script>
+<script>
+    angular.module('myApp',['mgcrea.ngStrap'])
+            .controller('ModelCtrl',['$scope','$modal',function($scope,$modal){
+                $scope.modal = {
+                        title:'My title',
+                        content:'My Content',
+                        show:true
+                    };
+            }]);
+</script>
+</body>
+</html>
